@@ -1,0 +1,53 @@
+#include<stdio.h>
+void read(int score[],long num[],int n);
+void Printf(int score[],long num[],int n);
+int descending(int score [],long num[],int n);
+void swap(int*x,int*y);
+int main()
+{
+   int score[4],n;
+   printf("input n:");
+   scanf("%d",&n);
+   void read(score,num,n);
+   void Printf(score,num,n);
+   int descending(score,num,n);
+   void Printf(score,n);
+}
+void read(int score[],long num[],int n)
+{
+   int i=-1;
+   do{
+       i++;
+       printf("input score and num :");
+       scanf("%d,%ld",&score[i],&num[i]);
+       }while(i<=n);
+}
+void Printf(int score[],long num[],int n)
+{
+   int i;
+   for(i=0;i<=n;i++)
+   {
+    printf("%4d\t%12ld\t",score[i],num[i]);
+   }
+   printf("\n");
+}
+int descending(int score[],long num[],int n)
+{
+   int i,j,k;
+   for(i=0;i<n-1;i++)
+   {
+     k=i;
+     for(j=i+1;j<n;j++)
+     {
+       if(score[j]>score[k]) k=j;
+     }
+    if (k!=i) swap(&score[k],&num[j]);
+   }
+}
+void swap(int*x,int*y)
+{
+   int temp;
+   temp=*x;
+   *x=*y;
+   *y=temp;
+}
